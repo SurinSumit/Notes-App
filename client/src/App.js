@@ -9,6 +9,8 @@ const App = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
+    axios.defaults.withCredentials = true;
+
     useEffect(() => {
         // Fetch notes from the server
         axios
