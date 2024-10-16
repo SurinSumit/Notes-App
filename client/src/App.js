@@ -12,7 +12,7 @@ const App = () => {
     useEffect(() => {
         // Fetch notes from the server
         axios
-            .get('http://localhost:5000/api/notes')
+            .get('notes-app-ochre-delta.vercel.app/api/notes')
             .then((response) => setNotes(response.data))
             .catch((error) => console.error('Error fetching notes:', error));
     }, []);
@@ -20,7 +20,7 @@ const App = () => {
     const handleAddNote = () => {
         // Add a new note to the server
         axios
-            .post('http://localhost:5000/api/notes', { title, content })
+            .post('notes-app-ochre-delta.vercel.app/api/notes', { title, content })
             .then((response) => {
                 setNotes([...notes, response.data]);
                 setTitle('');
@@ -31,7 +31,7 @@ const App = () => {
     const handleEditNote = (id, updatedTitle, updatedContent) => {
         // Update note by ID
         axios
-            .put(`http://localhost:5000/api/notes/${id}`, {
+            .put(`notes-app-ochre-delta.vercel.app/api/notes/${id}`, {
                 title: updatedTitle,
                 content: updatedContent,
             })
@@ -47,7 +47,7 @@ const App = () => {
     const handleDeleteNote = (id) => {
         // Delete note by ID
         axios
-            .delete(`http://localhost:5000/api/notes/${id}`)
+            .delete(`notes-app-ochre-delta.vercel.app/api/notes/${id}`)
             .then((response) => {
                 const updatedNotes = notes.filter((note) => note._id !== id);
                 setNotes(updatedNotes);
