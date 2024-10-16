@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors(
     {
-        origin: ["https://notes-gs7b0w6ry-sumit-surins-projects.vercel.app/"],
+        origin: ["https://notes-app-frontend-henna-delta.vercel.app/"],
         methods: ["POST","GET"],
         credentials: true
     }
